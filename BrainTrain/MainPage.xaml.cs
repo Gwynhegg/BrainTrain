@@ -8,14 +8,31 @@ using Xamarin.Forms;
 
 namespace BrainTrain
 {
-    // Learn more about making custom code visible in the Xamarin.Forms previewer
-    // by visiting https://aka.ms/xamarinforms-previewer
+
     [DesignTimeVisible(false)]
     public partial class MainPage : ContentPage
     {
+        private bool is_authorized = false;
         public MainPage()
         {
             InitializeComponent();
+            if (!is_authorized) to_prime.IsVisible = true;
+    }
+
+       private async void SendToPrime(object sender, EventArgs e)
+        {
+            if (!is_authorized)
+            {
+                ((Button)sender).Text = "Перейти в задания";
+                is_authorized = true;
+            }
+            else
+            {
+                await Navigation.PushModalAsync(new PrimePage());
+            }
         }
+
+        
+
     }
 }

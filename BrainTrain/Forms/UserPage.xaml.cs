@@ -7,21 +7,20 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace BrainTrain
+namespace BrainTrain.Forms
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class PrimePage : TabbedPage
+    public partial class UserPage : ContentPage
     {
-        public PrimePage()
+        public UserPage()
         {
             InitializeComponent();
-             
         }
 
-
-        private  async void ShowPopUpMenu(object sender, EventArgs e)
+        protected override bool OnBackButtonPressed()
         {
-            Application.Current.MainPage = new TaskPage();
+            Application.Current.MainPage = new InterfacePage();
+            return true;
         }
     }
 }

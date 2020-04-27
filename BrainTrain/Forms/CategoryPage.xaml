@@ -4,16 +4,15 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="BrainTrain.PrimePage">
+             x:Class="BrainTrain.Forms.CategoryPage">
   <!--Pages can be added as references or inline-->
-    <ContentPage Title="User">
-        
+    <ContentPage Title="Tab 1">
+        <ContentPage.Content>
+            <StackLayout>
+                <Button Text="Первое упражнение" Clicked="ToFastMath"></Button>
+            </StackLayout>
+        </ContentPage.Content>
     </ContentPage>
-    <ContentPage Title="Категория 1">
-        <Button Text="PopUp" Clicked="ShowPopUpMenu"></Button>
-    </ContentPage>
-
-    <ContentPage Title="Категория 2" />
-
-    <ContentPage Title="Категория 3" />
+  <ContentPage Title="Tab 2" />
+  <ContentPage Title="Tab 3" />
 </TabbedPage>

@@ -7,14 +7,20 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace BrainTrain
+namespace BrainTrain.Forms
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class TaskPage : ContentPage
+    public partial class TrainerPage : ContentPage
     {
-        public TaskPage()
+        public TrainerPage()
         {
             InitializeComponent();
+        }
+
+        protected override bool OnBackButtonPressed()
+        {
+            Application.Current.MainPage = new InterfacePage();
+            return true;
         }
     }
 }

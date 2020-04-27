@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="BrainTrain.Forms.MainPage">
+    <StackLayout x:Name="panelEnter">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="15*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="ToPrime" Text="Перейти на страницу"  Clicked="sendToPrime" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" />
+            <Button Text="Login" Grid.Row="1" Grid.Column="1"></Button>
+            <Button Text="Support" Grid.Row="2" Grid.Column="0"></Button>
+            <Label Text="Ver" Grid.Row="2" Grid.Column="2"></Label>
+        </Grid>
+    </StackLayout>
+</ContentPage>

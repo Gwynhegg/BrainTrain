@@ -6,49 +6,51 @@
              mc:Ignorable="d"
              x:Class="BrainTrain.Components.Math.fastCalculation_form">
     <ContentPage.Content>
-        <StackLayout>
-            <Grid>
+            <Grid x:Name ="content_grid" ColumnSpacing="0" RowSpacing="1">
                 <Grid.RowDefinitions>
+                    <RowDefinition Height="2*"></RowDefinition>
+                    <RowDefinition Height="4*"></RowDefinition>
                     <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="4*"></RowDefinition>
                     <RowDefinition Height="1*"></RowDefinition>
-                    <RowDefinition Height="1*"></RowDefinition>
-                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="4*"></RowDefinition>
                     <RowDefinition Height="1*"></RowDefinition>
                     <RowDefinition Height="1*"></RowDefinition>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="1*"></ColumnDefinition>
-                    <ColumnDefinition Width="1*"></ColumnDefinition>
-                    <ColumnDefinition Width="1*"></ColumnDefinition>
-                    <ColumnDefinition Width="1*"></ColumnDefinition>
-                    <ColumnDefinition Width="1*"></ColumnDefinition>
-                    <ColumnDefinition Width="1*"></ColumnDefinition>
-                    <ColumnDefinition Width="1*"></ColumnDefinition>
-                    <ColumnDefinition Width="1*"></ColumnDefinition>
-                    <ColumnDefinition Width="1*"></ColumnDefinition>
-                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <Label x:Name="txt_difficulty" Text="" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3"></Label>
-                <Label x:Name="txt_timer" Text="" Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="4"></Label>
-                <Label x:Name="txt_points" Text="" Grid.Row="0" Grid.Column="7" Grid.ColumnSpan="3"></Label>
-                <Label x:Name="txt_first" Text="" Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="4"></Label>
-                <Label x:Name="txt_operand" Text="" Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="4"></Label>
-                <Label x:Name="txt_second" Text="" Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="4"></Label>
-                <Label x:Name="txt_answer" Text="" Grid.Row="4" Grid.Column="4" Grid.ColumnSpan="4"></Label>
+                <Label x:Name="txt_difficulty" Text="" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" FontSize="Medium" HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand"></Label>
+                <Label x:Name="txt_timer" Text="lkjlj" Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="4" FontSize="Large" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+                <Label x:Name="txt_points" Text="" Grid.Row="0" Grid.Column="7" Grid.ColumnSpan="3" FontSize="Medium" HorizontalOptions="EndAndExpand" VerticalOptions="StartAndExpand"></Label>
+                <Label x:Name="txt_first" Text="" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="8" FontSize="Title" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+                <Label x:Name="txt_operand" Text="" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="8" FontSize="Title" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"></Label>
+                <Label x:Name="txt_second" Text="" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="8" FontSize="Title" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+                <Label x:Name ="txt_line" Text="_____________" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="8" FontSize="Title" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" IsVisible="False"></Label>
+                <Label x:Name="txt_answer" Text="" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="8" FontSize="Title" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"></Label>
+                <Label x:Name="txt_description" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="8" Grid.RowSpan="4" FontSize="Large"></Label>
+                <ProgressBar x:Name="current_time" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="10" IsVisible="False"></ProgressBar>
+                <Button x:Name="start" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="8" Text="Начать!" Clicked="startMath"></Button>
                 
-                <Button x:Name="num1" Text="1" Grid.Row="5" Grid.Column="0" Clicked="clickNumber"></Button>
-                <Button x:Name="num2" Text="2" Grid.Row="5" Grid.Column="1" Clicked="clickNumber"></Button>
-                <Button x:Name="num3" Text="3" Grid.Row="5" Grid.Column="2" Clicked="clickNumber"></Button>
-                <Button x:Name="num4" Text="4" Grid.Row="5" Grid.Column="3" Clicked="clickNumber"></Button>
-                <Button x:Name="num5" Text="5" Grid.Row="5" Grid.Column="4" Clicked="clickNumber"></Button>
-                <Button x:Name="num6" Text="6" Grid.Row="5" Grid.Column="5" Clicked="clickNumber"></Button>
-                <Button x:Name="num7" Text="7" Grid.Row="5" Grid.Column="6" Clicked="clickNumber"></Button>
-                <Button x:Name="num8" Text="8" Grid.Row="5" Grid.Column="7" Clicked="clickNumber"></Button>
-                <Button x:Name="num9" Text="9" Grid.Row="5" Grid.Column="8" Clicked="clickNumber"></Button>
-                <Button x:Name="num0" Text="0" Grid.Row="5" Grid.Column="9" Clicked="clickNumber"></Button>
-
-
-            </Grid>
-        </StackLayout>
+                <Button x:Name="num1" Text="1" Grid.Row="7" Grid.Column="0" Clicked="clickNumber"></Button>
+                <Button x:Name="num2" Text="2" Grid.Row="7" Grid.Column="1" Clicked="clickNumber"></Button>
+                <Button x:Name="num3" Text="3" Grid.Row="7" Grid.Column="2" Clicked="clickNumber"></Button>
+                <Button x:Name="num4" Text="4" Grid.Row="7" Grid.Column="3" Clicked="clickNumber"></Button>
+                <Button x:Name="num5" Text="5" Grid.Row="7" Grid.Column="4" Clicked="clickNumber"></Button>
+                <Button x:Name="num6" Text="6" Grid.Row="7" Grid.Column="5" Clicked="clickNumber"></Button>
+                <Button x:Name="num7" Text="7" Grid.Row="7" Grid.Column="6" Clicked="clickNumber"></Button>
+                <Button x:Name="num8" Text="8" Grid.Row="7" Grid.Column="7" Clicked="clickNumber"></Button>
+                <Button x:Name="num9" Text="9" Grid.Row="7" Grid.Column="8" Clicked="clickNumber"></Button>
+                <Button x:Name="num0" Text="0" Grid.Row="7" Grid.Column="9" Clicked="clickNumber"></Button>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

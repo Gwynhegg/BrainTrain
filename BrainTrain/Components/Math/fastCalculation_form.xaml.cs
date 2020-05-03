@@ -40,17 +40,11 @@ namespace BrainTrain.Components.Math
             return true;
         }
 
-        public void setDisplay()
-        {
-
-        }
-
         private void startMath(object sender, EventArgs e)
         {
             txt_description.IsVisible = false; ((Button)start).IsVisible = false;
             setNumPanel();
             txt_line.IsVisible = true;
-            current_time.IsVisible = true;
             new_task.startLevel();
         }
 

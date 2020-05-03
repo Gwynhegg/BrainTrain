@@ -9,7 +9,8 @@
     <ContentPage Title="Tab 1">
         <ContentPage.Content>
             <StackLayout>
-                <Button Text="Первое упражнение" Clicked="ToFastMath"></Button>
+                <Button Text="Быстрая арифметика" Clicked="ToFastMath"></Button>
+                <Button Text="Быстрое сложение" Clicked="ToFastSum"></Button>
             </StackLayout>
         </ContentPage.Content>
     </ContentPage>

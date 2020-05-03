@@ -27,5 +27,10 @@ namespace BrainTrain.Forms
         {
             Application.Current.MainPage = new Components.Math.fastCalculation_form();
         }
+
+        private void ToFastSum(object sender, EventArgs e)
+        {
+            Application.Current.MainPage = new Components.Math.fastSummarize_form();
+        }
     }
     }

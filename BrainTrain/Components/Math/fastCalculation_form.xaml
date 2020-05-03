@@ -30,7 +30,7 @@
                     <ColumnDefinition Width="*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
                 <Label x:Name="txt_difficulty" Text="" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" FontSize="Medium" HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand"></Label>
-                <Label x:Name="txt_timer" Text="lkjlj" Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="4" FontSize="Large" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+                <Label x:Name="txt_timer" Text="" Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="4" FontSize="Large" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
                 <Label x:Name="txt_points" Text="" Grid.Row="0" Grid.Column="7" Grid.ColumnSpan="3" FontSize="Medium" HorizontalOptions="EndAndExpand" VerticalOptions="StartAndExpand"></Label>
                 <Label x:Name="txt_first" Text="" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="8" FontSize="Title" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
                 <Label x:Name="txt_operand" Text="" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="8" FontSize="Title" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"></Label>

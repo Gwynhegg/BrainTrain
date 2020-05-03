@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="BrainTrain.Components.Math.fastSummarize_form">
+    <ContentPage.Content>
+        <Grid x:Name="content_grid" ColumnSpacing="0" RowSpacing="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="2*"></RowDefinition>
+                <RowDefinition Height="4*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Label x:Name="txt_difficulty" Text="difficulty" Grid.Row="0" Grid.Column="0"  FontSize="Medium" HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand"></Label>
+            <Label x:Name="txt_timer" Text="timer" Grid.Row="0" Grid.Column="1"  FontSize="Large" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+            <Label x:Name="txt_points" Text="points" Grid.Row="0" Grid.Column="2"  FontSize="Medium" HorizontalOptions="EndAndExpand" VerticalOptions="StartAndExpand"></Label>
+            <Label x:Name="curr_number" Text="number" Grid.Row="1" Grid.Column="1" FontSize="Title" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+            <ProgressBar x:Name="current_time" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3"></ProgressBar>
+            <Label x:Name="txt_description" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="1" Grid.RowSpan="2" FontSize="Large"></Label>
+            <Button x:Name="start" Grid.Row="3" Grid.Column="1" Clicked="startSummarize" VerticalOptions="StartAndExpand"></Button>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

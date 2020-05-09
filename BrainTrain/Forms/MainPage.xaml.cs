@@ -18,31 +18,15 @@ namespace BrainTrain.Forms
             InitializeComponent();
         }
 
-        protected override async void OnAppearing()
+        protected override void OnAppearing()
         {
             base.OnAppearing();
-            try
-            {
-                Components.User user = await App.Database.GetUserAsync();
-            }
-            catch
-            {
-            //    await App.Database.InsertUserAsync(new Components.User());
-            }
+
         }
 
-        private async void sendToPrime(object sender, EventArgs e)
+        private void sendToPrime(object sender, EventArgs e)
         {
-            try
-            {
-             Components.User user =  await App.Database.GetUserAsync();
-                user.ID = 12;
-               Console.WriteLine(user.ID);
-            }
-            catch
-            {
-                Console.WriteLine("you");
-            }
+
             Application.Current.MainPage = new InterfacePage();
         }
     }

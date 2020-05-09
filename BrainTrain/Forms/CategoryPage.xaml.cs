@@ -32,5 +32,15 @@ namespace BrainTrain.Forms
         {
             Application.Current.MainPage = new Components.Math.fastSummarize_form();
         }
+
+        private void ToMemTable(object sender, EventArgs e)
+        {
+            Application.Current.MainPage = new Components.Memory.memoryTable_form();
+        }
+
+        private void ToMemText(object sender, EventArgs e)
+        {
+            Application.Current.MainPage = new Components.Memory.memoryText_form();
+        }
     }
     }

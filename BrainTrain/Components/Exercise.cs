@@ -12,24 +12,16 @@ namespace BrainTrain.Components
         protected Random rnd;
         protected System.Timers.Timer general_timer, task_timer;
         protected DateTime end_time;
-        public int getGeneralPoints()
-        {
-            return general_points;
-        }
-
-        public int displayDifficulty()
-        {
-            return difficulty;
-        }
-
+        protected Grid content_grid;
     
-        public Exercise()
+        public Exercise(ref Grid grid)
         {
             rnd = new Random();
             current_mistakes = 0; current_positives = 0; general_points = 0; difficulty = 1;
             general_timer = new System.Timers.Timer();
             task_timer = new System.Timers.Timer();
             end_time = new DateTime();
+            content_grid = grid;
         }
 
         public void setStartingDiff(int diff)
@@ -45,9 +37,6 @@ namespace BrainTrain.Components
         public abstract void lowerDifficulty();
         public abstract void generateLevel();
         public abstract void checkLevel();
-
         public abstract void displayComponents();
     }
-
-
 }

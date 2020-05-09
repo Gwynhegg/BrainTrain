@@ -51,19 +51,17 @@ namespace BrainTrain.Components.Math
     public class fastCalculating :  Exercise
     {
         private double progress=1;
-        Grid content_grid;
         private string operand;
         private int first_number, second_number, answer;
-        public fastCalculating(ref Grid grid)
+        public fastCalculating(ref Grid grid) : base(ref grid)
         {
-            content_grid = grid;
             description = "На вашем экране будут появляться числа и арифметические операции. \n Ваша задача: набрать как можно больше очков, давая правильный ответ.";
         }
 
         public override void startLevel()
         {
             general_timer.Enabled = true; task_timer.Enabled = true;
-            general_timer.Interval = 10; task_timer.Interval = 10;
+            general_timer.Interval = 100; task_timer.Interval = 10;
             task_timer.Elapsed += new System.Timers.ElapsedEventHandler(OnTaskEvent);
             general_timer.Elapsed += new System.Timers.ElapsedEventHandler(OnTimedEvent);
             end_time = DateTime.Now.AddMinutes(1);
@@ -86,12 +84,12 @@ namespace BrainTrain.Components.Math
         private void OnTimedEvent(Object source, System.Timers.ElapsedEventArgs e)
         {
             TimeSpan cur = end_time - e.SignalTime;
-            if (cur.TotalMilliseconds < 0) 
+            if (cur.TotalMilliseconds <= 0) 
             {
                 general_timer.Enabled = false;
                 Application.Current.MainPage = new Forms.ResultPage();
             }
-            Device.BeginInvokeOnMainThread(async () => ((Label)content_grid.FindByName("txt_timer")).Text = cur.TotalSeconds.ToString("F2"));
+            Device.BeginInvokeOnMainThread(async () => ((Label)content_grid.FindByName("txt_timer")).Text = cur.TotalSeconds.ToString("F1"));
         }
 
         public override void generateLevel()

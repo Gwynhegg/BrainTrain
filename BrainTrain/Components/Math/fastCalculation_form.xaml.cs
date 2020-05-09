@@ -44,7 +44,7 @@ namespace BrainTrain.Components.Math
         {
             txt_description.IsVisible = false; ((Button)start).IsVisible = false;
             setNumPanel();
-            txt_line.IsVisible = true;
+            txt_line.IsVisible = true; current_time.IsVisible = true;
             new_task.startLevel();
         }
 

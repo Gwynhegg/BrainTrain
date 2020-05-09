@@ -1,29 +1,32 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 using SQLite;
+using Xamarin.Forms;
+
 
 namespace BrainTrain.DataBase
 {
-    public class Database
+    public static class Database
     {
-        readonly SQLite.SQLiteAsyncConnection _database;
 
-        public Database(string conn_string)
-        {
-            _database = new SQLiteAsyncConnection(conn_string);
-        }
+        //public static  SQLiteConnection createConnection()
+        //{
+        //    string document_path = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+        //    return new SQLiteConnection(Path.Combine(document_path, "brain_db"));
+        //}
 
-        public Task<Components.User> GetUserAsync()
-        {
-            return _database.Table<Components.User>().FirstAsync();
-        }
+        //public static Components.User GetUser(SQLiteConnection _conn)
+        //{
+        //    return _conn.Table<Components.User>().First();
+        //}
 
-        public Task<int> InsertUserAsync(Components.User user)
-        {
-            return _database.InsertAsync(user);
-        }
+        //public static void InsertUser(Components.User user, SQLiteConnection _conn)
+        //{
+        //    _conn.Insert(user);
+        //}
     }
 
 

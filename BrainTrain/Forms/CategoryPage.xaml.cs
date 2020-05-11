@@ -42,5 +42,15 @@ namespace BrainTrain.Forms
         {
             Application.Current.MainPage = new Components.Memory.memoryText_form();
         }
+
+        private void ToColoredText(object sender, EventArgs e)
+        {
+            Application.Current.MainPage = new Components.Attention.colorAttention_form();
+        }
+
+        private void ToAttSwitch(object sender, EventArgs e)
+        {
+            Application.Current.MainPage = new Components.Attention.attentionSwitch_form();
+        }
     }
     }

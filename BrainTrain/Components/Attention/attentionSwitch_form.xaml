@@ -4,11 +4,12 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="BrainTrain.Components.Memory.memoryText_form">
+             x:Class="BrainTrain.Components.Attention.attentionSwitch_form">
     <ContentPage.Content>
         <Grid x:Name="content_grid">
             <Grid.RowDefinitions>
                 <RowDefinition></RowDefinition>
+                <RowDefinition Height="3*"></RowDefinition>
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
@@ -21,9 +22,11 @@
             <Label x:Name="txt_timer" Grid.Row="0" Grid.Column="1"></Label>
             <Label x:Name="txt_points" Grid.Row="0" Grid.Column="2"></Label>
             <Label x:Name="txt_description" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3"></Label>
-            <Label x:Name="txt_text" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3"></Label>
-            <Button x:Name="Submit" Grid.Row="2" Grid.Column="1" Clicked="submitTask"></Button>
+            <Image x:Name="img_task" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Aspect="Fill"></Image>
+            <Button x:Name="decline" Text ="Нет" Grid.Row="2" Grid.Column="0" Clicked="Decline" IsVisible="false"></Button>
+            <Button x:Name="accept" Text="Да" Grid.Row="2" Grid.Column="2" Clicked="Accept" IsVisible="false"></Button>
+            <ProgressBar x:Name="current_time" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" IsVisible="false"></ProgressBar>
+            <Button x:Name="start" Grid.Row="3" Grid.Column="1" Clicked="startLevel"></Button>
         </Grid>
-
     </ContentPage.Content>
 </ContentPage>

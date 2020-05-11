@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="BrainTrain.Components.Attention.colorAttention_form">
+    <ContentPage.Content>
+        <Grid x:Name="content_grid">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Label x:Name="txt_difficulty" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"></Label>
+            <Label x:Name="txt_timer" Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2"></Label>
+            <Label x:Name="txt_points" Grid.Row="0" Grid.Column="4" Grid.ColumnSpan="2"></Label>
+            <Label x:Name="txt_description" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2"></Label>
+            <Label x:Name="txt_tasktext" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2"></Label>
+            <ProgressBar x:Name="current_time" IsVisible="false" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="6"></ProgressBar>
+            <Button x:Name ="col1" Clicked="sendColor" BackgroundColor="Red" Grid.Row="3" Grid.Column="0" IsVisible="false"></Button>
+            <Button x:Name ="col2" Clicked="sendColor" BackgroundColor="Green" Grid.Row="3" Grid.Column="1" IsVisible="false"></Button>
+            <Button x:Name ="col3" Clicked="sendColor" BackgroundColor="Blue" Grid.Row="3" Grid.Column="2" IsVisible="false"></Button>
+            <Button x:Name ="col4" Clicked="sendColor" BackgroundColor="Yellow" Grid.Row="3" Grid.Column="3" IsVisible="false"></Button>
+            <Button x:Name ="col5" Clicked="sendColor" BackgroundColor="Black" Grid.Row="3" Grid.Column="4" IsVisible="false"></Button>
+            <Button x:Name ="col6" Clicked="sendColor" BackgroundColor="Violet"  Grid.Row="3" Grid.Column="5" IsVisible="false"></Button>
+            <Button x:Name="start_button" Clicked="startColor" Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2"></Button>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

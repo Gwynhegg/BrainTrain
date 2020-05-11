@@ -22,5 +22,12 @@
             </StackLayout>
         </ContentPage.Content>
     </ContentPage>
-  <ContentPage Title="Tab 3" />
+    <ContentPage Title="Внимание">
+        <ContentPage.Content>
+            <StackLayout>
+                <Button Text="Текст и цвета" Clicked="ToColoredText"></Button>
+                <Button Text="Переключение внимания" Clicked="ToAttSwitch"></Button>
+            </StackLayout>
+        </ContentPage.Content>
+    </ContentPage>
 </TabbedPage>

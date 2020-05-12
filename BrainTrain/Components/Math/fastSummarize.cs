@@ -19,24 +19,10 @@ namespace BrainTrain.Components.Math
 
         public override void startLevel()
         {
-            general_timer.Enabled = true;
-            general_timer.Interval = 100;
-            general_timer.Elapsed += new System.Timers.ElapsedEventHandler(OnTimedEvent);
             end_time = DateTime.Now.AddMinutes(1);
-            general_timer.Start();
+            general_timer.Enabled = true;  general_timer.Start();
             displayComponents();
-            generateLevel();
-        }
-
-
-        private void OnTimedEvent(Object source, System.Timers.ElapsedEventArgs e)
-        {
-            TimeSpan cur = end_time - e.SignalTime;
-            if (cur.TotalMilliseconds <= 0)
-            {
-                Application.Current.MainPage = new Forms.ResultPage();
-            }
-            Device.BeginInvokeOnMainThread(async () => ((Label)content_grid.FindByName("txt_timer")).Text = cur.TotalSeconds.ToString("F1"));
+            Device.BeginInvokeOnMainThread(() => generateLevel());
         }
 
         public override void checkLevel()
@@ -52,7 +38,9 @@ namespace BrainTrain.Components.Math
                 if (current_positives >= current_mistakes) raiseDifficulty(); else lowerDifficulty();
                 current_positives = 0; current_mistakes = 0; answer_count = 0;
                 content_grid.Children.RemoveAt(content_grid.Children.Count-1);
-                generateLevel();
+                GC.Collect();
+                Device.BeginInvokeOnMainThread(() => generateLevel());
+
             }
             else 
             {
@@ -79,14 +67,6 @@ namespace BrainTrain.Components.Math
         {
             //ПОДУМОТЬ
              difficulty = difficulty * current_positives / (current_mistakes + 1) + 1;
-        }
-
-        public override void displayComponents()
-        {
-            
-            ((Label)content_grid.FindByName("txt_difficulty")).Text = "Сложность: \n" + difficulty.ToString();
-            ((Label)content_grid.FindByName("txt_points")).Text = "Очки: \n" + general_points.ToString();
-            
         }
 
         private void createTable()

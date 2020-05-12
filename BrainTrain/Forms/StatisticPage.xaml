@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="BrainTrain.Forms.StatisticPage">
+    <ContentPage.Content>
+        <Grid x:Name="content_grid">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <ScrollView Grid.Row="0" Grid.ColumnSpan="3">
+                <Grid x:Name="data_table"></Grid>
+            </ScrollView>
+            <Label x:Name="max_value" Grid.Row="1" Grid.ColumnSpan="3"></Label>
+            <Button x:Name="week" Text="10 записей" Grid.Row="3" Grid.Column="0" Clicked="Weekly"></Button>
+            <Button x:Name="month" Text="30 записей" Grid.Row="3" Grid.Column="1" Clicked="Monthly"></Button>
+            <Button x:Name="all_time" Text="Все записи" Grid.Row="3" Grid.Column="2" Clicked="allTime"></Button>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

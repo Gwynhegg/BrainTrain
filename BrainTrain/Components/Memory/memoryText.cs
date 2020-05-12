@@ -48,22 +48,9 @@ namespace BrainTrain.Components.Memory
 
         public override void startLevel()
         {
-            general_timer.Enabled = true;
-            general_timer.Interval = 100;
-            general_timer.Elapsed += new System.Timers.ElapsedEventHandler(OnTimedEvent);
             end_time = DateTime.Now.AddMinutes(2);
-            generateLevel();
-        }
-
-        private void OnTimedEvent(Object source, System.Timers.ElapsedEventArgs e)
-        {
-            TimeSpan cur = end_time - e.SignalTime;
-            if (cur.TotalMilliseconds <= 0)
-            {
-                general_timer.Enabled = false;
-                Application.Current.MainPage = new Forms.ResultPage();
-            }
-            Device.BeginInvokeOnMainThread(async () => ((Label)content_grid.FindByName("txt_timer")).Text = cur.TotalSeconds.ToString("F1"));
+            general_timer.Enabled = true; general_timer.Start();
+            Device.BeginInvokeOnMainThread(() => generateLevel());
         }
 
         public override void checkLevel()
@@ -73,7 +60,7 @@ namespace BrainTrain.Components.Memory
             general_points += current_positives;
             current_positives = 0;current_mistakes = 0;
             GC.Collect();
-            generateLevel();
+            Device.BeginInvokeOnMainThread(() => generateLevel());
         }
 
         public override void generateLevel()
@@ -84,12 +71,6 @@ namespace BrainTrain.Components.Memory
             string text_part = ITextHandler.selectTextPart(all_text);
             keys = ITextHandler.getKeys(all_text, difficulty);
             ((Label)content_grid.FindByName("txt_text")).Text = text_part;
-        }
-
-        public override void displayComponents()
-        {
-            ((Label)content_grid.FindByName("txt_difficulty")).Text = "Сложность: \n" + difficulty.ToString();
-            ((Label)content_grid.FindByName("txt_points")).Text = "Очки: \n" + general_points.ToString();
         }
 
         public override void lowerDifficulty()

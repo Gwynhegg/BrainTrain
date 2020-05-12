@@ -4,12 +4,70 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="BrainTrain.Forms.UserPage">
+             x:Class="BrainTrain.Forms.UserPage"
+             xmlns:syncfusion="clr-namespace:Syncfusion.XForms.Expander;assembly=Syncfusion.Expander.XForms">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <syncfusion:SfExpander Grid.Row="0" Grid.Column="0">
+                <syncfusion:SfExpander.Header>
+                    <Grid>
+                        <Label Text="Математика"></Label>
+                    </Grid>
+                </syncfusion:SfExpander.Header>
+                <syncfusion:SfExpander.Content>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Button Text="Быстрое сложение" Grid.Row="0" Clicked="toSum"></Button>
+                        <Button Text="Быстрая арифметика" Grid.Row="1" Clicked="toArifm"></Button>
+                    </Grid>
+                </syncfusion:SfExpander.Content>
+            </syncfusion:SfExpander>
+            <syncfusion:SfExpander Grid.Row="1" Grid.Column="0">
+                <syncfusion:SfExpander.Header>
+                    <Grid>
+                        <Label Text="Память"></Label>
+                    </Grid>
+                </syncfusion:SfExpander.Header>
+                <syncfusion:SfExpander.Content>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Button Text="Сложное запоминание" Grid.Row="0" Clicked="toMem"></Button>
+                        <Button Text="Запоминание текстов" Grid.Row="1" Clicked="toText"></Button>
+                    </Grid>
+                </syncfusion:SfExpander.Content>
+            </syncfusion:SfExpander>
+            <syncfusion:SfExpander Grid.Row="2" Grid.Column="0">
+                <syncfusion:SfExpander.Header>
+                    <Grid>
+                        <Label Text="Внимание"></Label>
+                    </Grid>
+                </syncfusion:SfExpander.Header>
+                <syncfusion:SfExpander.Content>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Button Text="Текст и цвета" Grid.Row="0" Clicked="toColor"></Button>
+                        <Button Text="Переключение внимания" Grid.Row="1" Clicked="toAtt"></Button>
+                    </Grid>
+                </syncfusion:SfExpander.Content>
+            </syncfusion:SfExpander>
+        </Grid>
+        
     </ContentPage.Content>
 </ContentPage>

@@ -50,7 +50,6 @@ namespace BrainTrain.Components.Math
 
     public class fastCalculating :  Exercise
     {
-        private double progress=1;
         private string operand;
         private int first_number, second_number, answer;
         public fastCalculating(ref Grid grid) : base(ref grid)
@@ -60,36 +59,10 @@ namespace BrainTrain.Components.Math
 
         public override void startLevel()
         {
-            general_timer.Enabled = true; task_timer.Enabled = true;
-            general_timer.Interval = 100; task_timer.Interval = 10;
-            task_timer.Elapsed += new System.Timers.ElapsedEventHandler(OnTaskEvent);
-            general_timer.Elapsed += new System.Timers.ElapsedEventHandler(OnTimedEvent);
             end_time = DateTime.Now.AddMinutes(1);
-            general_timer.Start();
-            generateLevel();        
-        }
-
-        private void OnTaskEvent(Object source, System.Timers.ElapsedEventArgs e)
-        {            
-                progress -= (double)(difficulty) / 1000;
-                if (progress < 0)
-                {
-                    task_timer.Stop();
-                    current_positives = 0;
-                    if (++current_mistakes > 2) lowerDifficulty();
-                    generateLevel();
-                }           
-            Device.BeginInvokeOnMainThread(async () => ((ProgressBar)content_grid.FindByName("current_time")).Progress = progress);
-        }
-        private void OnTimedEvent(Object source, System.Timers.ElapsedEventArgs e)
-        {
-            TimeSpan cur = end_time - e.SignalTime;
-            if (cur.TotalMilliseconds <= 0) 
-            {
-                general_timer.Enabled = false;
-                Application.Current.MainPage = new Forms.ResultPage();
-            }
-            Device.BeginInvokeOnMainThread(async () => ((Label)content_grid.FindByName("txt_timer")).Text = cur.TotalSeconds.ToString("F1"));
+            task_timer.Enabled = true;
+            general_timer.Enabled = true;  general_timer.Start();
+            Device.BeginInvokeOnMainThread(() => generateLevel());
         }
 
         public override void generateLevel()
@@ -132,8 +105,8 @@ namespace BrainTrain.Components.Math
                 current_positives = 0;
                 if (++current_mistakes > 2) lowerDifficulty();
             }
-
-            generateLevel();
+            GC.Collect();
+            Device.BeginInvokeOnMainThread(() => generateLevel());
         }
 
         public override void lowerDifficulty()
@@ -147,7 +120,7 @@ namespace BrainTrain.Components.Math
             difficulty += current_positives / 3;
         }
 
-        public override void displayComponents()
+        new public void displayComponents()
         {
             progress = 1;
             task_timer.Start();

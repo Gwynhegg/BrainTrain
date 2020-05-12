@@ -6,7 +6,6 @@
              mc:Ignorable="d"
              x:Class="BrainTrain.Forms.InterfacePage">
     <ContentPage.Content>
-        <StackLayout>
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"></RowDefinition>
@@ -20,8 +19,6 @@
                 <Button x:Name="ToTasks" Text="Задания" Clicked="sendToTasks" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3"></Button>
                 <Button x:Name="ToUser" Text="Пользователь" Clicked="sendToUser" Grid.Row="1" Grid.Column="0"></Button>
                 <Button x:Name="ToTrainer" Text="Тренер" Clicked="sendToTrainer" Grid.Row="1" Grid.Column="1"></Button>
-                <Button x:Name="ToStats" Text="Статистика(позже)" Clicked="sendToStats" Grid.Row="1" Grid.Column="2"></Button>
             </Grid>
-        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

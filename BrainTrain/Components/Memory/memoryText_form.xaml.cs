@@ -30,6 +30,12 @@ namespace BrainTrain.Components.Memory
             keys.IsVisible = false;
         }
 
+        protected override void OnDisappearing()
+        {
+            new_task = null;
+            GC.Collect();
+        }
+
         private void submitTask(object sender, EventArgs e)
         {
             if (!is_started) { new_task.startLevel(); txt_description.IsVisible = false; is_started = true;  } else new_task.Submit();
@@ -38,6 +44,7 @@ namespace BrainTrain.Components.Memory
 
         protected override bool OnBackButtonPressed()
         {
+            new_task.timerAnnulate();
             Application.Current.MainPage = new Forms.CategoryPage();
             return true;
         }

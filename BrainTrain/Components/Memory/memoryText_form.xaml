@@ -9,21 +9,22 @@
         <Grid x:Name="content_grid">
             <Grid.RowDefinitions>
                 <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
+                <RowDefinition Height="5*"></RowDefinition>
+                <RowDefinition Height="2*"></RowDefinition>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="3*"></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Label x:Name="txt_difficulty" Grid.Row="0" Grid.Column="0"></Label>
-            <Label x:Name="txt_timer" Grid.Row="0" Grid.Column="1"></Label>
-            <Label x:Name="txt_points" Grid.Row="0" Grid.Column="2"></Label>
-            <Label x:Name="txt_description" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3"></Label>
-            <Label x:Name="txt_text" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3"></Label>
-            <Button x:Name="Submit" Grid.Row="2" Grid.Column="1" Clicked="submitTask"></Button>
+            <Label x:Name="txt_difficulty" Grid.Row="0" Grid.Column="0" HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand" FontSize="Medium"></Label>
+            <Label x:Name="txt_timer" Grid.Row="0" Grid.Column="1" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontSize="Large"></Label>
+            <Label x:Name="txt_points" Grid.Row="0" Grid.Column="2" FontSize="Medium"></Label>
+            <Label x:Name="txt_description" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" FontSize="Large"></Label>
+            <ScrollView Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3">
+                <Label x:Name="txt_text"  FontSize="Medium"></Label>
+            </ScrollView>
+            <Button x:Name="Submit" Grid.Row="2" Grid.Column="1" Clicked="submitTask" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"></Button>
         </Grid>
-
     </ContentPage.Content>
 </ContentPage>

@@ -10,7 +10,7 @@
             <Grid.RowDefinitions>
                 <RowDefinition></RowDefinition>
                 <RowDefinition Height="3*"></RowDefinition>
-                <RowDefinition></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
@@ -18,10 +18,10 @@
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Label x:Name="txt_difficulty" Grid.Row="0" Grid.Column="0"></Label>
-            <Label x:Name="txt_timer" Grid.Row="0" Grid.Column="1"></Label>
-            <Label x:Name="txt_points" Grid.Row="0" Grid.Column="2"></Label>
-            <Label x:Name="txt_description" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3"></Label>
+            <Label x:Name="txt_difficulty" Grid.Row="0" Grid.Column="0" HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand" FontSize="Medium"></Label>
+            <Label x:Name="txt_timer" Grid.Row="0" Grid.Column="1" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontSize="Large"></Label>
+            <Label x:Name="txt_points" Grid.Row="0" Grid.Column="2" HorizontalOptions="EndAndExpand" VerticalOptions="StartAndExpand" FontSize="Medium"></Label>
+            <Label x:Name="txt_description" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" FontSize="Medium"></Label>
             <Image x:Name="img_task" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Aspect="Fill"></Image>
             <Button x:Name="decline" Text ="Нет" Grid.Row="2" Grid.Column="0" Clicked="Decline" IsVisible="false"></Button>
             <Button x:Name="accept" Text="Да" Grid.Row="2" Grid.Column="2" Clicked="Accept" IsVisible="false"></Button>

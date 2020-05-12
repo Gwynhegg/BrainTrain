@@ -37,7 +37,7 @@ namespace BrainTrain.Forms
             if (cur.TotalMilliseconds <= 0)
             {
                 general_timer.Enabled = false;
-                Device.BeginInvokeOnMainThread(async() => Application.Current.MainPage = new Forms.InterfacePage());
+                Device.BeginInvokeOnMainThread(() => Application.Current.MainPage = new Forms.InterfacePage());
             }
         }
         private void sendToPrime(object sender, EventArgs e)

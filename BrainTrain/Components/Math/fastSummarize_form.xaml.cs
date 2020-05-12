@@ -25,8 +25,14 @@ namespace BrainTrain.Components.Math
             txt_description.Text = new_task.showDescription();
         }
 
+        protected override void OnDisappearing()
+        {
+            new_task = null;
+            GC.Collect();
+        }
         protected override bool OnBackButtonPressed()
         {
+            new_task.timerAnnulate();
             Application.Current.MainPage = new Forms.CategoryPage();
             return true;
         }

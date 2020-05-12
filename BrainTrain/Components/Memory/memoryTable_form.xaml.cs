@@ -25,6 +25,12 @@ namespace BrainTrain.Components.Memory
             new_task = new memoryTable(ref content_grid);
             txt_description.Text = new_task.showDescription();
         }
+
+        protected override void OnDisappearing()
+        {
+            new_task = null;
+            GC.Collect();
+        }
         private void startMemTable(object sender, EventArgs e)
         {
             txt_description.IsVisible = false; ((Button)sender).IsVisible = false; current_time.IsVisible = true;
@@ -33,6 +39,7 @@ namespace BrainTrain.Components.Memory
 
         protected override bool OnBackButtonPressed()
         {
+            new_task.timerAnnulate();
             Application.Current.MainPage = new Forms.CategoryPage();
             return true;
         }

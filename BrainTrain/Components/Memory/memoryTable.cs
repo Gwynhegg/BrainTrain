@@ -7,7 +7,6 @@ namespace BrainTrain.Components.Memory
 {
     class memoryTable : Exercise
     {
-        private double progress = 1;
         private int possible_mistakes=10;
         private bool game_condition = true;
         private Grid table_grid;
@@ -18,10 +17,8 @@ namespace BrainTrain.Components.Memory
         }
         public override void startLevel()
         {
-            task_timer.Interval = 10;
-            task_timer.Elapsed += new System.Timers.ElapsedEventHandler(OnTaskEvent);
             displayComponents();
-            generateLevel();
+            Device.BeginInvokeOnMainThread(() => generateLevel());
         }
 
         public override void generateLevel()
@@ -45,13 +42,14 @@ namespace BrainTrain.Components.Memory
                 general_points += (current_positives - current_mistakes);
         }
         else lowerDifficulty();
-            if (current_mistakes>=possible_mistakes) Application.Current.MainPage = new Forms.ResultPage();
+            if (current_mistakes >= possible_mistakes) Device.BeginInvokeOnMainThread(() => Application.Current.MainPage = new Forms.ResultPage(this.GetType().ToString(), general_points));
             displayComponents();
             content_grid.Children.RemoveAt(content_grid.Children.Count-1);
+            GC.Collect();
             generateLevel();
         }
 
-        public override void displayComponents()
+        new public void displayComponents()
         {
             ((Label)content_grid.FindByName("txt_mistakes")).Text = "Осталось попыток: \n" + (possible_mistakes - current_mistakes);
             ((Label)content_grid.FindByName("txt_difficulty")).Text = "Сложность: \n" + difficulty.ToString();
@@ -117,7 +115,7 @@ namespace BrainTrain.Components.Memory
             task_timer.Start();
         }
 
-        private void OnTaskEvent(Object source, System.Timers.ElapsedEventArgs e)
+       new  private void OnTaskEvent(Object source, System.Timers.ElapsedEventArgs e)
         {
             progress -= (double)(difficulty) / 1000;
             if (progress < 0)
@@ -137,10 +135,10 @@ namespace BrainTrain.Components.Memory
                     game_condition = true;
                     table_grid.IsEnabled = false;
                     progress = 1;
-                 Device.BeginInvokeOnMainThread(async () =>  checkLevel());
+                 Device.BeginInvokeOnMainThread(() =>  checkLevel());
                 }
             }
-            Device.BeginInvokeOnMainThread(async () => ((ProgressBar)content_grid.FindByName("current_time")).Progress = progress);
+            Device.BeginInvokeOnMainThread(() => ((ProgressBar)content_grid.FindByName("current_time")).Progress = progress);
         }
 
         private void changeColor(object sender, EventArgs e)

@@ -12,6 +12,7 @@ namespace BrainTrain.Forms
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ResultPage : ContentPage
     {
+        //Здесь происходит вывод полученных очков на экран, а также запись данных в конкретную таблицу БД.
         public ResultPage(string type, int gen_points)
         {
             InitializeComponent();

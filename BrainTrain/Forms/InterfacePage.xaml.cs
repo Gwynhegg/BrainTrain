@@ -17,6 +17,7 @@ namespace BrainTrain.Forms
             InitializeComponent();
         }
 
+        //Методы-обработчики нажатия на кнопки навигационного меню.
         private void sendToTasks(object sender, EventArgs e)
         {
             Application.Current.MainPage = new CategoryPage();
@@ -32,14 +33,9 @@ namespace BrainTrain.Forms
             Application.Current.MainPage = new TrainerPage();
         }
 
-        private void sendToStats(object sender, EventArgs e)
-        {
-           // Application.Current.MainPage = new StatsPage();
-        }
-
         protected override bool OnBackButtonPressed()
         {
-            Application.Current.MainPage = new MainPage();
+            System.Environment.Exit(0);
             return true;
         }
     }

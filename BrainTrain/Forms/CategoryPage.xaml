@@ -4,29 +4,29 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="BrainTrain.Forms.CategoryPage">
-  <!--Pages can be added as references or inline-->
-    <ContentPage Title="Математика">
+             x:Class="BrainTrain.Forms.CategoryPage" BarBackgroundColor="#000000" BarTextColor="#DCDCDC">
+  <!--Страница типа TabbedPage, содержащия кнопки перехода к конкретным заданиям, сгруппированные по категориям.-->
+    <ContentPage Title="Математика" BackgroundColor="#939393">
         <ContentPage.Content>
             <StackLayout>
-                <Button Text="Быстрая арифметика" Clicked="ToFastMath"></Button>
-                <Button Text="Быстрое сложение" Clicked="ToFastSum"></Button>
+                <Button Text="Быстрая арифметика" Clicked="ToFastMath" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" TextColor="#FFFFFF" BackgroundColor="#373737"></Button>
+                <Button Text="Быстрое сложение" Clicked="ToFastSum" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" TextColor="#FFFFFF" BackgroundColor="#373737"></Button>
             </StackLayout>
         </ContentPage.Content>
     </ContentPage>
-    <ContentPage Title="Память">
+    <ContentPage Title="Память" BackgroundColor="#939393">
         <ContentPage.Content>
             <StackLayout>
-                <Button Text="Сложное запоминание" Clicked="ToMemTable"></Button>
-                <Button Text="Запоминание текстов" Clicked="ToMemText"></Button>
+                <Button Text="Сложное запоминание" Clicked="ToMemTable" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" TextColor="#FFFFFF" BackgroundColor="#373737"></Button>
+                <Button Text="Запоминание текстов" Clicked="ToMemText" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" TextColor="#FFFFFF" BackgroundColor="#373737"></Button>
             </StackLayout>
         </ContentPage.Content>
     </ContentPage>
-    <ContentPage Title="Внимание">
+    <ContentPage Title="Внимание" BackgroundColor="#939393">
         <ContentPage.Content>
             <StackLayout>
-                <Button Text="Текст и цвета" Clicked="ToColoredText"></Button>
-                <Button Text="Переключение внимания" Clicked="ToAttSwitch"></Button>
+                <Button Text="Текст и цвета" Clicked="ToColoredText" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" TextColor="#FFFFFF" BackgroundColor="#373737"></Button>
+                <Button Text="Переключение внимания" Clicked="ToAttSwitch" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" TextColor="#FFFFFF" BackgroundColor="#373737"></Button>
             </StackLayout>
         </ContentPage.Content>
     </ContentPage>

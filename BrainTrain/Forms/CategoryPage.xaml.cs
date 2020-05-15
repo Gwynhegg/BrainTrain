@@ -23,6 +23,7 @@ namespace BrainTrain.Forms
             return true;
         }
 
+        //Методы-обработчики нажатия на определенную кнопку и отсылающие к необходимому заданию.
         private void ToFastMath(object sender, EventArgs e)
         {
             Application.Current.MainPage = new Components.Math.fastCalculation_form();

@@ -20,6 +20,7 @@ namespace BrainTrain.Forms
             InitializeComponent();
         }
 
+        //Заглавное окно программы, которое после определенной паузы сменяется на главное меню.
         protected override void OnAppearing()
         {
             base.OnAppearing();
@@ -40,6 +41,13 @@ namespace BrainTrain.Forms
                 Device.BeginInvokeOnMainThread(() => Application.Current.MainPage = new Forms.InterfacePage());
             }
         }
+
+        private void toSupport(object sender, EventArgs e)
+        {
+            general_timer.Enabled = false;
+            Application.Current.MainPage = new Forms.SupportPage();
+        }
+
         private void sendToPrime(object sender, EventArgs e)
         {
 

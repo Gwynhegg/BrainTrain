@@ -11,11 +11,16 @@ using Xamarin.Forms;
 
 namespace BrainTrain.DataBase
 {
+    //Класс базы данных, отвечающий за соединение, создание и открытие таблиц, выгрузку и запись данных в базу.
     public class Database
     {
+        //Переменная соединения с базой данных.
         readonly SQLiteAsyncConnection _database;
+
+        //Конструктор класса, принимающий путь до базы данных в качестве параметра.
         public Database(string path)
         {
+            //Создаем соединение и необходимые таблицы, если они отсутствуют.
             _database = new SQLiteAsyncConnection(path);
             _database.CreateTableAsync <Components.memoryTable>().Wait();
             _database.CreateTableAsync<Components.memoryText>().Wait();
@@ -25,6 +30,8 @@ namespace BrainTrain.DataBase
             _database.CreateTableAsync<Components.colorAttention>().Wait();
         }
 
+
+        //Данные методы предназначены для выгрузки данных из конкретной таблицы конкретного упражнения.
         public Task<List<Components.memoryTable>> getMem()
             {
             return _database.Table<Components.memoryTable>().ToListAsync();
@@ -55,7 +62,7 @@ namespace BrainTrain.DataBase
         }
 
 
-
+        //Данные методы предназначены для записи значений в определенную таблицу базы данных.
         public Task<int> SaveNoteAsync(Components.fastSummarize item)
         {
             if (item.ID != 0)

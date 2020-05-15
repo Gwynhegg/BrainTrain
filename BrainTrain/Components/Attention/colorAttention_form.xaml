@@ -4,7 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="BrainTrain.Components.Attention.colorAttention_form">
+             x:Class="BrainTrain.Components.Attention.colorAttention_form" BackgroundColor="#000000">
     <ContentPage.Content>
         <Grid x:Name="content_grid">
             <Grid.RowDefinitions>
@@ -21,18 +21,21 @@
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Label x:Name="txt_difficulty" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand" FontSize="Medium"></Label>
-            <Label x:Name="txt_timer" Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontSize="Large"></Label>
-            <Label x:Name="txt_points" Grid.Row="0" Grid.Column="4" Grid.ColumnSpan="2" HorizontalOptions="EndAndExpand" VerticalOptions="StartAndExpand" FontSize="Medium"></Label>
-            <Label x:Name="txt_description" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" FontSize="Medium"></Label>
-            <Label x:Name="txt_tasktext" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontSize="Large"></Label>
+            <!--Компоненты, отвечающие за вывод игровых показателей - текущей сложности, таймера, очков-->
+            <Label x:Name="txt_difficulty" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand" FontSize="Medium"  TextColor="White"></Label>
+            <Label x:Name="txt_timer" Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontSize="Large"  TextColor="White"></Label>
+            <Label x:Name="txt_points" Grid.Row="0" Grid.Column="4" Grid.ColumnSpan="2" HorizontalOptions="EndAndExpand" VerticalOptions="StartAndExpand" FontSize="Medium"  TextColor="White"></Label>
+            <Label x:Name="txt_description" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="6" FontSize="Medium"  TextColor="White"></Label>
+            <!--Главный компонент - текст-->
+            <Label x:Name="txt_tasktext" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="6" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontSize="Large" BackgroundColor="#A7A7A7"></Label>
             <ProgressBar x:Name="current_time" IsVisible="false" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="6"></ProgressBar>
-            <Button x:Name ="col1" Clicked="sendColor" BackgroundColor="Red" Grid.Row="3" Grid.Column="0" IsVisible="false"></Button>
-            <Button x:Name ="col2" Clicked="sendColor" BackgroundColor="Green" Grid.Row="3" Grid.Column="1" IsVisible="false"></Button>
-            <Button x:Name ="col3" Clicked="sendColor" BackgroundColor="Blue" Grid.Row="3" Grid.Column="2" IsVisible="false"></Button>
-            <Button x:Name ="col4" Clicked="sendColor" BackgroundColor="Yellow" Grid.Row="3" Grid.Column="3" IsVisible="false"></Button>
-            <Button x:Name ="col5" Clicked="sendColor" BackgroundColor="Black" Grid.Row="3" Grid.Column="4" IsVisible="false"></Button>
-            <Button x:Name ="col6" Clicked="sendColor" BackgroundColor="Violet"  Grid.Row="3" Grid.Column="5" IsVisible="false"></Button>
+            <!--Цифровая панель, содержащая кнопки разных цветов-->
+            <Button x:Name ="col1" Clicked="sendColor" BackgroundColor="Red" Grid.Row="3" Grid.Column="0" IsVisible="false" BorderColor="#FFFFFF" BorderWidth="1"></Button>
+            <Button x:Name ="col2" Clicked="sendColor" BackgroundColor="Green" Grid.Row="3" Grid.Column="1" IsVisible="false" BorderColor="#FFFFFF" BorderWidth="1"></Button>
+            <Button x:Name ="col3" Clicked="sendColor" BackgroundColor="Blue" Grid.Row="3" Grid.Column="2" IsVisible="false" BorderColor="#FFFFFF" BorderWidth="1"></Button>
+            <Button x:Name ="col4" Clicked="sendColor" BackgroundColor="Yellow" Grid.Row="3" Grid.Column="3" IsVisible="false" BorderColor="#FFFFFF" BorderWidth="1"></Button>
+            <Button x:Name ="col5" Clicked="sendColor" BackgroundColor="Black" Grid.Row="3" Grid.Column="4" IsVisible="false" BorderColor="#FFFFFF" BorderWidth="1"></Button>
+            <Button x:Name ="col6" Clicked="sendColor" BackgroundColor="Violet"  Grid.Row="3" Grid.Column="5" IsVisible="false" BorderColor="#FFFFFF" BorderWidth="1"></Button>
             <Button x:Name="start_button" Clicked="startColor" Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2"></Button>
         </Grid>
     </ContentPage.Content>

@@ -5,7 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="BrainTrain.Forms.UserPage"
-             xmlns:syncfusion="clr-namespace:Syncfusion.XForms.Expander;assembly=Syncfusion.Expander.XForms">
+             xmlns:syncfusion="clr-namespace:Syncfusion.XForms.Expander;assembly=Syncfusion.Expander.XForms" BackgroundColor="#000000">
     <ContentPage.Content>
         <Grid>
             <Grid.RowDefinitions>
@@ -16,9 +16,9 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <syncfusion:SfExpander Grid.Row="0" Grid.Column="0">
+            <syncfusion:SfExpander Grid.Row="0" Grid.Column="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="#282828" IsExpanded="True">
                 <syncfusion:SfExpander.Header>
-                    <Grid>
+                    <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
                         <Label Text="Математика"></Label>
                     </Grid>
                 </syncfusion:SfExpander.Header>
@@ -28,14 +28,14 @@
                             <RowDefinition></RowDefinition>
                             <RowDefinition></RowDefinition>
                         </Grid.RowDefinitions>
-                        <Button Text="Быстрое сложение" Grid.Row="0" Clicked="toSum"></Button>
-                        <Button Text="Быстрая арифметика" Grid.Row="1" Clicked="toArifm"></Button>
+                        <Button Text="Быстрое сложение" Grid.Row="0" Clicked="toSum" VerticalOptions="FillAndExpand" TextColor="#FFFFFF" HorizontalOptions="FillAndExpand" BackgroundColor="#3F3F3F" FontSize="Medium"></Button>
+                        <Button Text="Быстрая арифметика" Grid.Row="1" Clicked="toArifm" VerticalOptions="FillAndExpand" TextColor="#FFFFFF" HorizontalOptions="FillAndExpand" BackgroundColor="#3F3F3F" FontSize="Medium"></Button>
                     </Grid>
                 </syncfusion:SfExpander.Content>
             </syncfusion:SfExpander>
-            <syncfusion:SfExpander Grid.Row="1" Grid.Column="0">
+            <syncfusion:SfExpander Grid.Row="1" Grid.Column="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="#282828" IsExpanded="True">
                 <syncfusion:SfExpander.Header>
-                    <Grid>
+                    <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
                         <Label Text="Память"></Label>
                     </Grid>
                 </syncfusion:SfExpander.Header>
@@ -45,14 +45,14 @@
                             <RowDefinition></RowDefinition>
                             <RowDefinition></RowDefinition>
                         </Grid.RowDefinitions>
-                        <Button Text="Сложное запоминание" Grid.Row="0" Clicked="toMem"></Button>
-                        <Button Text="Запоминание текстов" Grid.Row="1" Clicked="toText"></Button>
+                        <Button Text="Сложное запоминание" Grid.Row="0" Clicked="toMem" VerticalOptions="FillAndExpand" TextColor="#FFFFFF" HorizontalOptions="FillAndExpand" BackgroundColor="#3F3F3F" FontSize="Medium"></Button>
+                        <Button Text="Запоминание текстов" Grid.Row="1" Clicked="toText" VerticalOptions="FillAndExpand" TextColor="#FFFFFF" HorizontalOptions="FillAndExpand" BackgroundColor="#3F3F3F" FontSize="Medium"></Button>
                     </Grid>
                 </syncfusion:SfExpander.Content>
             </syncfusion:SfExpander>
-            <syncfusion:SfExpander Grid.Row="2" Grid.Column="0">
+            <syncfusion:SfExpander Grid.Row="2" Grid.Column="0"  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="#282828" IsExpanded="True">
                 <syncfusion:SfExpander.Header>
-                    <Grid>
+                    <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
                         <Label Text="Внимание"></Label>
                     </Grid>
                 </syncfusion:SfExpander.Header>
@@ -62,8 +62,8 @@
                             <RowDefinition></RowDefinition>
                             <RowDefinition></RowDefinition>
                         </Grid.RowDefinitions>
-                        <Button Text="Текст и цвета" Grid.Row="0" Clicked="toColor"></Button>
-                        <Button Text="Переключение внимания" Grid.Row="1" Clicked="toAtt"></Button>
+                        <Button Text="Текст и цвета" Grid.Row="0" Clicked="toColor" VerticalOptions="FillAndExpand" TextColor="#FFFFFF" HorizontalOptions="FillAndExpand" BackgroundColor="#3F3F3F" FontSize="Medium"></Button>
+                        <Button Text="Переключение внимания" Grid.Row="1" Clicked="toAtt" VerticalOptions="FillAndExpand" TextColor="#FFFFFF" HorizontalOptions="FillAndExpand" BackgroundColor="#3F3F3F" FontSize="Medium"></Button>
                     </Grid>
                 </syncfusion:SfExpander.Content>
             </syncfusion:SfExpander>

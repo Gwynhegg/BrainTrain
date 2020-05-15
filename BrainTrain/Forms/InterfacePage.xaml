@@ -4,21 +4,20 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="BrainTrain.Forms.InterfacePage">
+             x:Class="BrainTrain.Forms.InterfacePage" BackgroundColor="#000000">
     <ContentPage.Content>
-            <Grid>
+            <Grid ColumnSpacing="20" RowSpacing="20">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="2*"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"></ColumnDefinition>
                     <ColumnDefinition Width="*"></ColumnDefinition>
-                    <ColumnDefinition Width="*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <Button x:Name="ToTasks" Text="Задания" Clicked="sendToTasks" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3"></Button>
-                <Button x:Name="ToUser" Text="Пользователь" Clicked="sendToUser" Grid.Row="1" Grid.Column="0"></Button>
-                <Button x:Name="ToTrainer" Text="Тренер" Clicked="sendToTrainer" Grid.Row="1" Grid.Column="1"></Button>
+            <Button x:Name="ToTasks" Text="Задания" Clicked="sendToTasks" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" BackgroundColor="#C1C1C1" FontSize="Large"></Button>
+            <Button x:Name="ToUser" Text="Пользователь" Clicked="sendToUser" Grid.Row="1" Grid.Column="0" BackgroundColor="#C1C1C1" FontSize="Medium"></Button>
+            <Button x:Name="ToTrainer" Text="Тренер" Clicked="sendToTrainer" Grid.Row="1" Grid.Column="1" BackgroundColor="#C1C1C1" FontSize="Medium"></Button>
             </Grid>
     </ContentPage.Content>
 </ContentPage>

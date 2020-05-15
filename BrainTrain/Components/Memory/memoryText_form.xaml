@@ -4,27 +4,29 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="BrainTrain.Components.Memory.memoryText_form">
+             x:Class="BrainTrain.Components.Memory.memoryText_form" BackgroundColor="#000000">
     <ContentPage.Content>
         <Grid x:Name="content_grid">
             <Grid.RowDefinitions>
-                <RowDefinition></RowDefinition>
-                <RowDefinition Height="5*"></RowDefinition>
                 <RowDefinition Height="2*"></RowDefinition>
+                <RowDefinition Height="5*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition Width="3*"></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Label x:Name="txt_difficulty" Grid.Row="0" Grid.Column="0" HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand" FontSize="Medium"></Label>
-            <Label x:Name="txt_timer" Grid.Row="0" Grid.Column="1" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontSize="Large"></Label>
-            <Label x:Name="txt_points" Grid.Row="0" Grid.Column="2" FontSize="Medium"></Label>
-            <Label x:Name="txt_description" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" FontSize="Large"></Label>
-            <ScrollView Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3">
-                <Label x:Name="txt_text"  FontSize="Medium"></Label>
+            <!--Компоненты, отвечающие за вывод игровых показателей - текущей сложности, таймера, очков-->
+            <Label x:Name="txt_difficulty" Grid.Row="0" Grid.Column="0" HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand" FontSize="Medium" TextColor="#FFFFFF"></Label>
+            <Label x:Name="txt_timer" Grid.Row="0" Grid.Column="1" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontSize="Large" TextColor="#FFFFFF"></Label>
+            <Label x:Name="txt_points" Grid.Row="0" Grid.Column="2" FontSize="Medium" TextColor="#FFFFFF"></Label>
+            <Label x:Name="txt_description" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" FontSize="Large" TextColor="#FFFFFF"></Label>
+            <!--Здесь будет выводится текст для запоминания-->
+            <ScrollView Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <Label x:Name="txt_text"  FontSize="Medium" VerticalOptions="FillAndExpand" TextColor="#FFFFFF" HorizontalOptions="FillAndExpand"></Label>
             </ScrollView>
-            <Button x:Name="Submit" Grid.Row="2" Grid.Column="1" Clicked="submitTask" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"></Button>
+            <Button Text ="Принять" x:Name="Submit" Grid.Row="2" Grid.Column="1" Clicked="submitTask" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"></Button>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

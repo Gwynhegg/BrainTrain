@@ -5,6 +5,8 @@ using SQLite;
 
 namespace BrainTrain.Components
 {
+
+    //Вспомогательный класс для запоминания результатов в базе данных. Поля: ID, очки и дата прохождения.
     public class ExerciseResults
     {
         [PrimaryKey, AutoIncrement]

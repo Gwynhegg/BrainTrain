@@ -4,12 +4,12 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="BrainTrain.Forms.SupportPage">
+             x:Class="BrainTrain.Forms.SupportPage" BackgroundColor="#000000">
     <ContentPage.Content>
         <StackLayout>
             <Label Text="Бог в помощь."
                 VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+                HorizontalOptions="CenterAndExpand" TextColor="#FFFFFF" FontSize="Large" FontAttributes="Bold" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

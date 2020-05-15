@@ -4,7 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="BrainTrain.Components.Math.fastSummarize_form">
+             x:Class="BrainTrain.Components.Math.fastSummarize_form" BackgroundColor="#000000">
     <ContentPage.Content>
         <Grid x:Name="content_grid" ColumnSpacing="0" RowSpacing="1">
             <Grid.RowDefinitions>
@@ -18,11 +18,12 @@
                 <ColumnDefinition Width="2*"></ColumnDefinition>
                 <ColumnDefinition Width="1*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Label x:Name="txt_difficulty" Text="" Grid.Row="0" Grid.Column="0"  FontSize="Medium" HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand"></Label>
-            <Label x:Name="txt_timer" Text="" Grid.Row="0" Grid.Column="1"  FontSize="Large" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
-            <Label x:Name="txt_points" Text="" Grid.Row="0" Grid.Column="2"  FontSize="Medium" HorizontalOptions="EndAndExpand" VerticalOptions="StartAndExpand"></Label>
-            <Label x:Name="curr_number" Text="" Grid.Row="1" Grid.Column="1" FontSize="Title" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
-            <Label x:Name="txt_description" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="1" Grid.RowSpan="2" FontSize="Large"></Label>
+            <!--Компоненты, отвечающие за вывод игровых показателей - текущей сложности, таймера, очков-->
+            <Label x:Name="txt_difficulty" Text="" Grid.Row="0" Grid.Column="0"  FontSize="Default" HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand"  TextColor="#FFFFFF"></Label>
+            <Label x:Name="txt_timer" Text="" Grid.Row="0" Grid.Column="1"  FontSize="Large" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"  TextColor="#FFFFFF"></Label>
+            <Label x:Name="txt_points" Text="" Grid.Row="0" Grid.Column="2"  FontSize="Default" HorizontalOptions="EndAndExpand" VerticalOptions="StartAndExpand"  TextColor="#FFFFFF"></Label>
+            <Label x:Name="curr_number" Text="" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" FontSize="Title" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"  TextColor="#FFFFFF"></Label>
+            <Label x:Name="txt_description" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="1" Grid.RowSpan="2" FontSize="Large"  TextColor="#FFFFFF"></Label>
             <Button x:Name="start" Grid.Row="3" Grid.Column="1" Clicked="startSummarize" VerticalOptions="StartAndExpand" ></Button>
         </Grid>
     </ContentPage.Content>

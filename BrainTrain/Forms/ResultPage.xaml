@@ -4,12 +4,13 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="BrainTrain.Forms.ResultPage">
+             x:Class="BrainTrain.Forms.ResultPage" BackgroundColor="#000000">
     <ContentPage.Content>
         <StackLayout>
+            <Label Text="Поздравляем!" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand" TextColor="#FFFFFF" Visual="Material" FontSize="Large"/>
             <Label Text="" x:Name="points"
                 VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+                HorizontalOptions="CenterAndExpand" FontSize="Medium" TextColor="#FFFFFF" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

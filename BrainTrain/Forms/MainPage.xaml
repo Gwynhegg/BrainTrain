@@ -4,9 +4,9 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="BrainTrain.Forms.MainPage">
+             x:Class="BrainTrain.Forms.MainPage" BackgroundColor="#000000" Visual="Material">
     <StackLayout x:Name="panelEnter">
-        <Grid>
+        <Grid ColumnSpacing="3" RowSpacing="3">
             <Grid.RowDefinitions>
                 <RowDefinition Height="15*"></RowDefinition>
                 <RowDefinition Height="1*"></RowDefinition>
@@ -15,9 +15,9 @@
                 <ColumnDefinition Width="1*"></ColumnDefinition>
                 <ColumnDefinition Width="1*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Image x:Name="front_screen" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"></Image>
-            <Button Text="Support" Grid.Row="1" Grid.Column="0"></Button>
-            <Label Text="Ver" Grid.Row="1" Grid.Column="1"></Label>
+            <Image x:Name="front_screen" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Source="brain.png" Aspect="AspectFit"></Image>
+            <Button x:Name="support" Clicked="toSupport" Text="Поддержка" Grid.Row="1" Grid.Column="0" BackgroundColor="#FFFFFF" FontAttributes="Bold,Italic" FontSize="Default" BorderColor="#2F2F2F" BorderWidth="1"/>
+            <Label Text="Ver 1.0" Grid.Row="1" Grid.Column="1" VerticalOptions="Fill" HorizontalOptions="EndAndExpand" TextColor="#FFFFFF"></Label>
         </Grid>
     </StackLayout>
 </ContentPage>

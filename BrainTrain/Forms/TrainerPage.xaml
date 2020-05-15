@@ -4,12 +4,24 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="BrainTrain.Forms.TrainerPage">
+             x:Class="BrainTrain.Forms.TrainerPage" BackgroundColor="#000000">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <Grid x:Name="data_table">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height="2*"></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height="2*"></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height="2*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Button x:Name="create_trainer" Text="Создать предложение" Grid.Row="2" Clicked="createTrainer" Grid.RowSpan="2" TextColor="#FFFFFF" BackgroundColor="#303030"></Button>
+            <Label x:Name="lbl_low" Grid.Row="0" TextColor="#FFFFFF" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontSize="Medium"></Label>
+            <Button x:Name="to_lowest" Text="Перейти ->" Grid.Row="1" Clicked="toLowest" IsVisible="false" BackgroundColor="#414141" TextColor="#FFFFFF" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" FontSize="Medium"></Button>
+            <Label x:Name="lbl_average" Grid.Row="2" IsVisible="false" TextColor="#FFFFFF" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontSize="Medium"></Label>
+            <Button x:Name="to_average" Text="Перейти ->" Grid.Row="3" Clicked="toAverage" IsVisible="false" BackgroundColor="#414141" TextColor="#FFFFFF" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" FontSize="Medium"></Button>
+            <Label x:Name="lbl_date" Grid.Row="4" TextColor="#FFFFFF" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontSize="Medium"></Label>
+            <Button x:Name="to_date" Text="Перейти ->" Grid.Row="5" Clicked="toDate" IsVisible="false" BackgroundColor="#414141" TextColor="#FFFFFF" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" FontSize="Medium"></Button>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

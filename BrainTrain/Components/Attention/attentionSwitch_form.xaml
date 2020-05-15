@@ -4,12 +4,12 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="BrainTrain.Components.Attention.attentionSwitch_form">
+             x:Class="BrainTrain.Components.Attention.attentionSwitch_form" BackgroundColor="#000000">
     <ContentPage.Content>
         <Grid x:Name="content_grid">
             <Grid.RowDefinitions>
-                <RowDefinition></RowDefinition>
-                <RowDefinition Height="3*"></RowDefinition>
+                <RowDefinition Height="2*"></RowDefinition>
+                <RowDefinition Height="5*"></RowDefinition>
                 <RowDefinition Height="1*"></RowDefinition>
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
@@ -18,15 +18,18 @@
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Label x:Name="txt_difficulty" Grid.Row="0" Grid.Column="0" HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand" FontSize="Medium"></Label>
-            <Label x:Name="txt_timer" Grid.Row="0" Grid.Column="1" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontSize="Large"></Label>
-            <Label x:Name="txt_points" Grid.Row="0" Grid.Column="2" HorizontalOptions="EndAndExpand" VerticalOptions="StartAndExpand" FontSize="Medium"></Label>
-            <Label x:Name="txt_description" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" FontSize="Medium"></Label>
+            <!--Компоненты, отвечающие за вывод игровых показателей - текущей сложности, таймера, очков-->
+            <Label x:Name="txt_difficulty" Grid.Row="0" Grid.Column="0" HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand" FontSize="Medium" TextColor="White"></Label>
+            <Label x:Name="txt_timer" Grid.Row="0" Grid.Column="1" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontSize="Large"  TextColor="White"></Label>
+            <Label x:Name="txt_points" Grid.Row="0" Grid.Column="2" HorizontalOptions="EndAndExpand" VerticalOptions="StartAndExpand" FontSize="Medium"  TextColor="White"></Label>
+            <Label x:Name="txt_description" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Grid.RowSpan="4" FontSize="Medium"  TextColor="White"></Label>
+            <!--Здесь отображается изображение-->
             <Image x:Name="img_task" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Aspect="Fill"></Image>
+            <!--Кнопки, отвечающие за принятие решений.-->
             <Button x:Name="decline" Text ="Нет" Grid.Row="2" Grid.Column="0" Clicked="Decline" IsVisible="false"></Button>
             <Button x:Name="accept" Text="Да" Grid.Row="2" Grid.Column="2" Clicked="Accept" IsVisible="false"></Button>
             <ProgressBar x:Name="current_time" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" IsVisible="false"></ProgressBar>
-            <Button x:Name="start" Grid.Row="3" Grid.Column="1" Clicked="startLevel"></Button>
+            <Button  Text="Принять" x:Name="start" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" Clicked="startLevel" VerticalOptions="CenterAndExpand"></Button>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

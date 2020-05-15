@@ -4,13 +4,13 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="BrainTrain.Forms.StatisticPage">
+             x:Class="BrainTrain.Forms.StatisticPage" BackgroundColor="#000000">
     <ContentPage.Content>
-        <Grid x:Name="content_grid">
+        <Grid x:Name="content_grid" RowSpacing="10">
             <Grid.RowDefinitions>
+                <RowDefinition Height="2*"></RowDefinition>
                 <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
+                <RowDefinition Height="2*"></RowDefinition>
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
@@ -18,13 +18,13 @@
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <ScrollView Grid.Row="0" Grid.ColumnSpan="3">
-                <Grid x:Name="data_table"></Grid>
+            <ScrollView Grid.Row="0" Grid.ColumnSpan="3" HorizontalScrollBarVisibility="Always">
+                <Grid x:Name="data_table" BackgroundColor="#373737" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" ColumnSpacing="10" RowSpacing="10" FlowDirection="LeftToRight"></Grid>
             </ScrollView>
-            <Label x:Name="max_value" Grid.Row="1" Grid.ColumnSpan="3"></Label>
-            <Button x:Name="week" Text="10 записей" Grid.Row="3" Grid.Column="0" Clicked="Weekly"></Button>
-            <Button x:Name="month" Text="30 записей" Grid.Row="3" Grid.Column="1" Clicked="Monthly"></Button>
-            <Button x:Name="all_time" Text="Все записи" Grid.Row="3" Grid.Column="2" Clicked="allTime"></Button>
+            <Label x:Name="max_value" Grid.Row="1" Grid.ColumnSpan="3" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" TextColor="#FFFFFF"></Label>
+            <Button x:Name="week" Text="10 записей" Grid.Row="3" Grid.Column="0" Clicked="Weekly" BackgroundColor="#323232" TextColor="#FFFFFF"></Button>
+            <Button x:Name="month" Text="30 записей" Grid.Row="3" Grid.Column="1" Clicked="Monthly" BackgroundColor="#323232" TextColor="#FFFFFF"></Button>
+            <Button x:Name="all_time" Text="Все записи" Grid.Row="3" Grid.Column="2" Clicked="allTime" BackgroundColor="#323232" TextColor="#FFFFFF"></Button>
         </Grid>
     </ContentPage.Content>
 </ContentPage>
